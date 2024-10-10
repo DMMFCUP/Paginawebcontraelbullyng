@@ -188,6 +188,35 @@
     </div>
     <!-- End Banner Hero -->
 
+    <!-- Sección de comentarios -->
+    <div class="container">
+        <h1>Lista de Comentarios</h1>
+        <table id="comentariosTabla" border="1">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Comentario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Los comentarios se cargarán aquí dinámicamente -->
+          </tbody>
+        </table>
+      
+        <h2>Añadir un nuevo comentario</h2>
+        <form id="formComentario">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <br>
+          <label for="comentario">Comentario:</label>
+          <textarea id="comentario" name="comentario" required></textarea>
+          <br>
+          <button type="submit">Agregar Comentario</button>
+        </form>
+    </div>
+
+
+    
     <!-- Start Footer -->
     <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
@@ -234,6 +263,8 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="http:unpkg.com/@supabase/supabase-js"></script>
+    <script src="comentarios.js"></script>
     <!-- End Script -->
 </body>
 
