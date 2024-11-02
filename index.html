@@ -404,26 +404,76 @@
                     <li>No respondas a la violencia con violencia</li>
                     <li>Busca apoyo profesional si es necesario</li>
                 </ol>
-                    <!-- Sección de comentarios -->
-    <section id="comentarios" class="section comments-section">
-        <h2>Comentarios</h2>
-        <form
+
+                
+<!-- Sección de comentarios -->
+<section id="comentarios" class="section comments-section">
+    <h2>Comentarios</h2>
+    
+    
+    <div id="fake-comments" style="margin-bottom: 1rem;">
+        <h3>.</h3>
+        <div class="fake-comment">
+            <p><strong>Usuario1:</strong> Este programa es increíble, ¡me ha ayudado mucho!</p>
+            <button class="react-button">TE APOYO</button>
+            <span class="reaction-count">0</span>
+        </div>
+        <div class="fake-comment">
+            <p><strong>Usuario2:</strong> No creo que esto funcione, pero lo intentaré.</p>
+            <button class="react-button">TE APOYO</button>
+            <span class="reaction-count">0</span>
+        </div>
+    </div>
+
+    <form
         action="https://formspree.io/f/xgveanon"
         method="POST"
         style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);"
-      >
+    >
         <label style="margin-bottom: 10px;">
-          Tu nombre:
-          <input type="text" name="nombre" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
+            Tu nombre:
+            <input type="text" name="nombre" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
         </label>
         <label style="margin-bottom: 10px;">
-          Tu comentario:
-          <textarea name="comentario" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+            Tu comentario:
+            <textarea name="comentario" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
         </label>
         <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
-          Enviar
+            Enviar
         </button>
-      </form>
+    </form>
+</section>
+
+<!-- ... código existente ... -->
+
+<script>
+    // Manejo de reacciones a comentarios falsos
+    const reactButtons = document.querySelectorAll('.react-button');
+
+    reactButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const countSpan = this.nextElementSibling;
+            let count = parseInt(countSpan.textContent);
+            count++;
+            countSpan.textContent = count;
+        });
+    });
+
+    const buttons = document.querySelectorAll('.react-button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Cambiar el color del botón a verde
+            button.style.backgroundColor = 'green';
+            button.style.color = 'white'; // Cambiar el color del texto si es necesario
+
+            // Opcional: deshabilitar el botón para que no se pueda presionar de nuevo
+            button.disabled = true;
+        });
+    });
+    
+</script>
+
     </section>
 
                 <h3>Números de Emergencia</h3>
