@@ -8,7 +8,7 @@
     
 </head>
 <body>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="css\styles.css"> 
     <header>
         <h1>Prevención Activa</h1>
         <p>Juntos contra el bullying</p>
@@ -17,10 +17,10 @@
     <nav>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#que-es">¿Qué es el Bullying?</a></li>
-            <li><a href="#tipos">Tipos de Bullying</a></li>
-            <li><a href="#señales">Señales de Alerta</a></li>
-            <li><a href="#ayuda">Buscar Ayuda</a></li>
+            <li><a href="QUE_ES_EL_BULLYING.html">¿Qué es el Bullying?</a></li>
+            <li><a href="TIPOS DE BULLYING.html">Tipos de Bullying</a></li>
+            <li><a href="SEÑALES DE ALERTA.html">Señales de Alerta</a></li>
+            <li><a href="BUSCA AYUDA.html">Buscar Ayuda</a></li>
         </ul>
     </nav>
 
@@ -68,18 +68,6 @@
     </script>
 
     <div class="content">
-        <section id="que-es" class="section">
-            <h2>¿Qué es el Bullying?</h2>
-            <p>El bullying o acoso escolar es un comportamiento agresivo y no deseado entre niños en edad escolar que involucra un desequilibrio de poder real o percibido. El comportamiento se repite o tiende a repetirse a lo largo del tiempo. Tanto los niños que son acosados como los que acosan pueden sufrir problemas graves y duraderos.</p>
-            
-            <h3>Características principales del bullying:</h3>
-            <ul>
-                <li>Intencionalidad: La acción agresiva es deliberada y consciente</li>
-                <li>Repetición: La conducta agresiva se repite en el tiempo</li>
-                <li>Desequilibrio de poder: Existe una desigualdad de poder entre el acosador y la víctima</li>
-                <li>Indefensión: La víctima se encuentra en una situación de la que difícilmente puede salir por sus propios medios</li>
-            </ul>
-        </section>
 
         <section id="tipos" class="section">
             <h2>Tipos de Bullying</h2>
@@ -263,63 +251,6 @@
         </button>
     </form>
 </section>
-
-<!-- ... código existente ... -->
-
-<script>
-    // Manejo de reacciones a comentarios falsos
-    const reactButtons = document.querySelectorAll('.react-button');
-
-    reactButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const countSpan = this.nextElementSibling;
-            let count = parseInt(countSpan.textContent);
-            count++;
-            countSpan.textContent = count;
-        });
-    });
-
-    const buttons = document.querySelectorAll('.react-button');
-
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Cambiar el color del botón a verde
-            button.style.backgroundColor = 'green';
-            button.style.color = 'white'; // Cambiar el color del texto si es necesario
-
-            // Opcional: deshabilitar el botón para que no se pueda presionar de nuevo
-            button.disabled = true;
-        });
-    });
-    const commentsContainer = document.getElementById('comments-container');
-    const commentForm = document.getElementById('comment-form');
-
-    // Función para cargar comentarios desde la API
-    async function loadComments() {
-        const response = await fetch('https://tu-api.com/comentarios'); // Cambia esto por tu API
-        const comments = await response.json();
-        comments.forEach(comment => {
-            displayComment(comment);
-        });
-    }
-
-    // Función para mostrar un comentario
-    function displayComment(comment) {
-        const commentDiv = document.createElement('div');
-        commentDiv.classList.add('fake-comment');
-        commentDiv.innerHTML = `
-            <p><strong>${comment.nombre}:</strong> ${comment.comentario}</p>
-            <button class="react-button" data-id="${comment.id}">👍</button>
-            <span class="reaction-count">${comment.reacciones}</span>
-        `;
-        commentsContainer.appendChild(commentDiv);
-    }
-
-
-    
-</script>
-
-
 
     </section>
 
