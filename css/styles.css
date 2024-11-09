@@ -225,4 +225,27 @@ footer {
     .carousel {
         height: 300px;
     }
+
+    .Ruta{
+        align-items: center;
+    }
+
+    .imagen-centrada {
+        display: block; /* Cambia el comportamiento de la imagen a bloque */
+        margin-left: auto; /* Margen izquierdo automático */
+        margin-right: auto; /* Margen derecho automático */
+        max-width: 100%; /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+        height: auto; /* Mantiene la relación de aspecto de la imagen */
+    }
+
+    .contenedor {
+        display: flex; /* Usar flexbox */
+        justify-content: center; /* Centrar horizontalmente */
+    }
+    
+    .contenedor img {
+        max-width: 100%; /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+        height: auto; /* Mantiene la relación de aspecto de la imagen */
+    }
+    
 }
